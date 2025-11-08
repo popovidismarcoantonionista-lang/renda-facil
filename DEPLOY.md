@@ -80,6 +80,12 @@ Sua API estará em: `https://renda-facil-api.onrender.com`
    - Client Secret: `seu-client-secret-aqui`
 5. **Cole no Render** como `PLUGGY_CLIENT_SECRET`
 
+### **Configurar Webhook (opcional):**
+```
+Webhook URL: https://renda-facil-api.onrender.com/api/webhook/pluggy
+Events: payment.succeeded, payment.failed
+```
+
 ---
 
 ## 📺 **5. GOOGLE ADSENSE - Anúncios**
@@ -95,12 +101,118 @@ Sua API estará em: `https://renda-facil-api.onrender.com`
    - Substitua no arquivo `ads.js`
    - Substitua no arquivo `google-adsense-head.html`
 
+### **Criar unidades de anúncio:**
+
+1. **Display Ads:**
+   - Banner Topo: 728x90
+   - Banner Lateral: 300x250
+   - Banner Rodapé: 728x90
+2. **Copie os códigos** e cole nos HTMLs
+
 ### **Monetização esperada:**
 - **R$ 0,50 - R$ 2,00** por 1.000 visualizações
 - **R$ 0,10 - R$ 0,50** por clique
 
 ---
 
-## 🎯...
+## 🎯 **6. CONFIGURAÇÃO FINAL**
 
-**Seu projeto está pronto! 🚀**
+### **Atualizar URLs no código:**
+
+1. **Backend (`backend/server.js`):**
+```javascript
+const FRONTEND_URL = 'https://renda-facil.vercel.app';
+```
+
+2. **Frontend (`dashboard.js`):**
+```javascript
+const API_URL = 'https://renda-facil-api.onrender.com';
+```
+
+### **Commit e push:**
+```bash
+git add .
+git commit -m "🔧 Update API URLs for production"
+git push origin main
+```
+
+**Vercel e Render farão redeploy automático!** 🚀
+
+---
+
+## ✅ **CHECKLIST DE DEPLOY**
+
+- [ ] Vercel configurado
+- [ ] Render configurado
+- [ ] MongoDB Atlas criado
+- [ ] Variáveis de ambiente configuradas
+- [ ] Pluggy.ai Client Secret adicionado
+- [ ] URLs atualizadas no código
+- [ ] Google AdSense cadastrado
+- [ ] Testes de pagamento PIX
+- [ ] Testes de cadastro/login
+- [ ] Testes de saques
+
+---
+
+## 📊 **MONITORAMENTO**
+
+### **Logs do Backend (Render):**
+```
+https://dashboard.render.com/web/YOUR-SERVICE-ID/logs
+```
+
+### **Analytics (Vercel):**
+```
+https://vercel.com/your-username/renda-facil/analytics
+```
+
+### **MongoDB Metrics:**
+```
+https://cloud.mongodb.com/v2/YOUR-PROJECT-ID#/metrics
+```
+
+---
+
+## 🚨 **TROUBLESHOOTING**
+
+### **Erro: "Cannot connect to MongoDB"**
+✅ Verifique se o `MONGODB_URI` está correto
+✅ Verifique se o IP `0.0.0.0/0` está na whitelist
+
+### **Erro: "Pluggy API failed"**
+✅ Verifique se o `PLUGGY_CLIENT_SECRET` está correto
+✅ Teste as credenciais no Postman
+
+### **Erro: "CORS blocked"**
+✅ Adicione o domínio Vercel no CORS do backend
+
+---
+
+## 💡 **PRÓXIMOS PASSOS**
+
+1. ✅ **Testar tudo** no ambiente de produção
+2. ✅ **Configurar domínio customizado** (opcional)
+3. ✅ **Adicionar Google Analytics**
+4. ✅ **Implementar sistema de afiliados**
+5. ✅ **Criar painel administrativo**
+6. ✅ **Adicionar mais tarefas e vídeos**
+
+---
+
+## 🎉 **ESTÁ TUDO PRONTO!**
+
+Seu projeto **RendaFácil** está **100% deployado** e funcionando!
+
+**Links importantes:**
+- 🌐 Frontend: https://renda-facil.vercel.app
+- 🔧 API: https://renda-facil-api.onrender.com
+- 📊 GitHub: https://github.com/popovidismarcoantonionista-lang/renda-facil
+
+**Suporte:**
+- 📧 Email: suporte@rendafacil.com
+- 💬 Discord: https://discord.gg/rendafacil
+
+---
+
+**Feito com ❤️ por RendaFácil Team**
