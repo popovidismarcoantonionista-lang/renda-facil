@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: renda-facil-api
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PLUGGY_CLIENT_ID
+        value: 08a122f1-1549-4a55-a3ea-c24114c44359
+      - key: PLUFGY_CLIENT_SECRET
+        sync: false
+      - key: PLUFGY_API_URL
+        value: https://api.pluggy.ai
+      - key: FRONTEND_URL
+        value: https://renda-facil.vercel.app
+
+databases:
+  - name: renda-facil-db
+    databaseName: rendafacil
+    user: rendafacil
+    region: oregon
+    plan: free
