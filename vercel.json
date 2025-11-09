@@ -7,7 +7,7 @@
     },
     {
       "src": "*.css",
-      "use": "@cvercel/static"
+      "use": "@vercel/static"
     },
     {
       "src": "*.js",
